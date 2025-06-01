@@ -15,9 +15,7 @@ export const SkillsData: SkillCategory[] = [
     skills: [
       { name: 'Python', level: 95, experience: '8+ years' },
       { name: 'JavaScript/TypeScript', level: 85, experience: '6+ years' },
-      { name: 'C++', level: 75, experience: '4+ years' },
       { name: 'Java', level: 70, experience: '3+ years' },
-      { name: 'Go', level: 60, experience: '2+ years' }
     ]
   },
   {
@@ -33,21 +31,31 @@ export const SkillsData: SkillCategory[] = [
   {
     category: 'Cloud & DevOps',
     skills: [
-      { name: 'AWS', level: 85, experience: '5+ years' },
-      { name: 'GCP', level: 80, experience: '4+ years' },
+      { name: 'Azure', level: 85, experience: '5+ years' },
+      { name: 'AWS', level: 80, experience: '4+ years' },
       { name: 'Docker', level: 90, experience: '6+ years' },
-      { name: 'Kubernetes', level: 75, experience: '3+ years' },
       { name: 'CI/CD', level: 85, experience: '5+ years' }
     ]
   },
   {
-    category: 'Specialized Skills',
+    category: 'GenAI',
     skills: [
-      { name: 'Computer Vision', level: 90, experience: '6+ years' },
-      { name: 'Natural Language Processing', level: 85, experience: '5+ years' },
-      { name: 'Reinforcement Learning', level: 80, experience: '4+ years' },
-      { name: 'MLOps', level: 85, experience: '3+ years' },
-      { name: 'Data Engineering', level: 75, experience: '4+ years' }
+      { name: 'Rag systems', level: 90, experience: '6+ years' },
+      { name: 'MCP', level: 85, experience: '5+ years' },
+      { name: 'Whisper', level: 80, experience: '4+ years' },
+      { name: 'Elevenlabs', level: 85, experience: '3+ years' },
+      { name: 'Veo3', level: 85, experience: '3+ years' }
+    ]
+  },
+    {
+    category: 'Backend',
+    skills: [
+      { name: 'Django', level: 90, experience: '6+ years' },
+      { name: 'MCP', level: 85, experience: '5+ years' },
+      { name: 'Whisper', level: 80, experience: '4+ years' },
+      { name: 'Elevenlabs', level: 85, experience: '3+ years' },
+      { name: 'Veo3', level: 85, experience: '3+ years' }
     ]
   }
+  
 ];
