@@ -1,10 +1,12 @@
-export interface Experience {
-  type: 'work' | 'education' | 'award';
+// src/data/experienceData.ts
+
+export interface Experience { // Renamed from ExperienceItem to Experience to match your provided interface
+  type: 'work' | 'education' | 'award'; // Added 'award' as a possibility
   title: string;
-  company: string;
+  company: string; // For education, this could be 'Institution' or 'University'
   location: string;
   date: string;
-  responsibilities: string[];
+  responsibilities: string[]; // For education, these could be 'Key Courses', 'Thesis', 'GPA'
   achievements?: string[];
   technologies: string[];
 }
@@ -69,14 +71,18 @@ export const ExperienceData: Experience[] = [
   {
     type: 'education',
     title: 'M.S. in Computer Science, AI Specialization',
-    company: 'Stanford University',
+    company: 'Stanford University', // Using 'company' field for Institution name
     location: 'Stanford, CA',
     date: '2017 - 2019',
-    responsibilities: [
+    responsibilities: [ // Using 'responsibilities' for details like GPA, Thesis, etc.
       'GPA: 3.92/4.0',
       'Thesis: "Efficient Transfer Learning for Vision-Language Models"',
       'Research Assistant at Stanford AI Lab',
       'Teaching Assistant for Deep Learning and Computer Vision courses'
+    ],
+    achievements: [ // Can add academic awards or significant project outcomes here
+      'Awarded Stanford Graduate Fellowship',
+      'Best Thesis Award Nominee'
     ],
     technologies: ['Deep Learning', 'Computer Vision', 'NLP', 'Reinforcement Learning', 'Probabilistic Graphical Models']
   }
