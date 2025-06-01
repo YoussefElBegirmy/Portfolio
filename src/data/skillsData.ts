@@ -28,7 +28,6 @@ export const SkillsData: SkillCategory[] = [
       { name: 'Hugging Face', level: 85, experience: '3+ years' },
       { name: 'LangChain', level: 80, experience: '3+ years' },
       { name: 'Pandas', level: 80, experience: '3+ years' },
-      { name: 'Numpy', level: 80, experience: '3+ years' },
     ]
   },
   {
@@ -48,8 +47,7 @@ export const SkillsData: SkillCategory[] = [
       { name: 'Natural Language Processing', level: 85, experience: '5+ years' },
       { name: 'LLM Application Development / RAG', level: 80, experience: '4+ years' },
       { name: 'Data Engineering', level: 85, experience: '3+ years' },
-      { name: 'Data Analysis & Visualization', level: 85, experience: '3+ years' },
-      { name: 'MLOps', level: 85, experience: '3+ years' },
+      { name: 'MLOps', level: 85, experience: '3+ years' }
     ]
   },
     {
