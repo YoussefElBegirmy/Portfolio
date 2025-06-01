@@ -60,7 +60,7 @@ export const SkillsData: SkillCategory[] = [
     ]
   },
       {
-    category: 'Web/backend',
+    category: 'Web / Backend',
     skills: [
       { name: 'Flask', level: 90, experience: '6+ years' },
       { name: 'FastAPI', level: 85, experience: '5+ years' },
