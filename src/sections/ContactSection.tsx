@@ -1,5 +1,7 @@
+// src/sections/ContactSection.tsx
+
 import React, { useState } from 'react';
-import { Send, Github, Linkedin, Twitter, FileText } from 'lucide-react';
+import { Send, Github, Linkedin, /* Twitter, */ FileText } from 'lucide-react'; // Removed Twitter as it's not in your provided links
 import SectionTitle from '../components/SectionTitle';
 
 const ContactSection: React.FC = () => {
@@ -28,15 +30,16 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Replace this with your actual form submission logic (e.g., Formspree, Netlify Forms, backend API)
+    console.log("Form Data Submitted:", formData); 
     setTimeout(() => {
       setIsSubmitting(false);
+      // This is a success simulation. In a real app, the success/error would come from the submission attempt.
       setSubmitStatus({
         type: 'success',
         message: 'Message sent successfully! I will get back to you soon.',
       });
       
-      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -44,7 +47,6 @@ const ContactSection: React.FC = () => {
         message: '',
       });
       
-      // Clear success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus({ type: null, message: '' });
       }, 5000);
@@ -56,54 +58,52 @@ const ContactSection: React.FC = () => {
       <div className="container">
         <SectionTitle>Get In Touch</SectionTitle>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start"> {/* Added items-start for better alignment */}
           <div>
             <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
             <p className="text-gray-300 mb-6">
-              Have a project in mind or want to discuss a potential collaboration? 
-              I'm always open to new opportunities and challenges in the AI space.
+              Have a project in mind, a question, or want to discuss a potential collaboration? 
+              I'm always open to new opportunities and challenges in the AI and Data Science space.
             </p>
             
             <div className="flex flex-col space-y-4 mb-8">
               <div>
-                <p className="text-gray-400">Email:</p>
-                <p className="text-accent">johndoe@example.com</p>
+                <p className="text-gray-400 text-sm">Email:</p>
+                <a href="mailto:yelbegermy@gmail.com" className="text-accent hover:underline">
+                  yelbegermy@gmail.com
+                </a>
               </div>
               <div>
-                <p className="text-gray-400">Location:</p>
-                <p>San Francisco, CA</p>
+                <p className="text-gray-400 text-sm">Location:</p>
+                <p className="text-gray-200">Cairo, Egypt</p> {/* Updated from CV */}
               </div>
             </div>
             
             <div className="flex space-x-6 mb-8">
               <a 
-                href="https://github.com" 
+                href="https://github.com/YoussefElBegirmy" // Updated from CV
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-text hover:text-accent transition-colors"
+                aria-label="GitHub Profile"
               >
-                <Github size={24} />
+                <Github size={28} /> {/* Slightly larger icons */}
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/youssef-elbegermy/" // Updated from CV
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-text hover:text-accent transition-colors"
+                aria-label="LinkedIn Profile"
               >
-                <Linkedin size={24} />
+                <Linkedin size={28} /> {/* Slightly larger icons */}
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-text hover:text-accent transition-colors"
-              >
-                <Twitter size={24} />
-              </a>
+              {/* Twitter link removed as not provided for your CV */}
             </div>
             
+            {/* Make sure you have a resume.pdf in your public folder for this to work */}
             <a 
-              href="/resume.pdf" 
+              href="/YoussefElbegermy_CV.pdf" // Consider naming your resume PDF consistently
               className="btn btn-outline inline-flex items-center gap-2"
               download
             >
@@ -112,13 +112,13 @@ const ContactSection: React.FC = () => {
             </a>
           </div>
           
-          <div className="card">
+          <div className="card p-6 md:p-8"> {/* Consistent padding with other cards */}
             <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
             
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1.5">
+                  Your Name
                 </label>
                 <input
                   type="text"
@@ -127,13 +127,14 @@ const ContactSection: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-secondary bg-opacity-20 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text"
+                  placeholder="e.g., Jane Doe"
+                  className="w-full px-4 py-2.5 bg-secondary bg-opacity-30 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text placeholder-gray-500"
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1.5">
+                  Your Email
                 </label>
                 <input
                   type="email"
@@ -142,12 +143,13 @@ const ContactSection: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-secondary bg-opacity-20 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text"
+                  placeholder="e.g., jane@example.com"
+                  className="w-full px-4 py-2.5 bg-secondary bg-opacity-30 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text placeholder-gray-500"
                 />
               </div>
               
               <div className="mb-4">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1.5">
                   Subject
                 </label>
                 <input
@@ -157,13 +159,14 @@ const ContactSection: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 bg-secondary bg-opacity-20 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text"
+                  placeholder="e.g., Project Collaboration"
+                  className="w-full px-4 py-2.5 bg-secondary bg-opacity-30 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text placeholder-gray-500"
                 />
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1.5">
+                  Your Message
                 </label>
                 <textarea
                   id="message"
@@ -172,14 +175,15 @@ const ContactSection: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 bg-secondary bg-opacity-20 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text resize-none"
+                  placeholder="Hi Youssef, I'd like to discuss..."
+                  className="w-full px-4 py-2.5 bg-secondary bg-opacity-30 rounded-md border border-gray-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent text-text placeholder-gray-500 resize-none"
                 ></textarea>
               </div>
               
               {submitStatus.type && (
                 <div 
-                  className={`p-4 mb-4 rounded-md ${
-                    submitStatus.type === 'success' ? 'bg-success bg-opacity-20 text-success' : 'bg-error bg-opacity-20 text-error'
+                  className={`p-3 mb-4 rounded-md text-sm ${ // Adjusted padding and text size
+                    submitStatus.type === 'success' ? 'bg-success bg-opacity-20 text-success-content' : 'bg-error bg-opacity-20 text-error-content' // Assuming you might have text-success-content, or use text-success if directly
                   }`}
                 >
                   {submitStatus.message}
@@ -189,10 +193,10 @@ const ContactSection: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn btn-primary flex items-center justify-center gap-2"
+                className="w-full btn btn-primary flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 {isSubmitting ? (
-                  <span>Sending...</span>
+                  <span className="animate-pulse">Sending...</span>
                 ) : (
                   <>
                     <Send size={18} />
