@@ -136,6 +136,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 <p className="text-sm text-gray-400">{project.startDate} – {project.endDate}</p>
               </div>
               
+              // Inside ProjectModal.tsx, in the "Right Column (Details, Tech, Metrics)"
               {project.technologies && project.technologies.length > 0 && (
                 <div>
                   <h4 className="text-lg font-semibold text-gray-200 mb-2">Technologies Used</h4>
@@ -143,7 +144,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                     {project.technologies.map((tech, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 text-xs bg-accent bg-opacity-20 text-accent rounded-full"
+                        // OLD: className="px-2.5 py-1 text-xs bg-accent bg-opacity-20 text-accent rounded-full"
+                        // NEW:
+                        className="px-2.5 py-1 text-xs bg-accent bg-opacity-20 text-white font-medium rounded-full" // Changed to text-white and added font-medium
                       >
                         {tech}
                       </span>
