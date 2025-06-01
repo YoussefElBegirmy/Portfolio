@@ -19,12 +19,17 @@
   
   body {
     @apply bg-background text-text font-sans;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll on main page */
   }
 
-  /* Optional: Prevent body scroll when modal is open */
+  /* For the simple overlay modal (if you still use it elsewhere) */
   body.modal-open {
-    overflow: hidden;
+    @apply overflow-hidden; /* Prevents main page scroll when simple modal is open */
+  }
+
+  /* For the Behance-style full-page modal */
+  body.modal-open-behance {
+    @apply overflow-hidden; /* Prevents main page scroll when Behance-style modal is open */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -69,11 +74,8 @@
     @apply border-2 border-accent text-accent hover:bg-accent hover:text-white;
   }
 
+  /* Base card style, can be extended or overridden by specific components */
   .card {
-    /* Note: The new ProjectsSection.tsx applies card styles directly.
-       This .card class can be a base or be overridden.
-       The p-6 might be removed if cards in ProjectsSection define their own padding.
-    */
     @apply bg-secondary bg-opacity-20 backdrop-blur-sm rounded-xl p-6 transition-all duration-300;
   }
 
@@ -90,16 +92,23 @@
   }
 }
 
-/* Modal Animations */
+/* Modal Animations & Utilities */
 @layer utilities {
+  /* For simple overlay modal */
   .animate-fade-in {
     animation: fade-in 0.3s ease-out forwards;
   }
   .animate-modal-scale-up {
     animation: modal-scale-up 0.3s ease-out forwards;
   }
+
+  /* For Behance-style modal (can be the same or different) */
+  .animate-fade-in-fast {
+    animation: fade-in 0.2s ease-out forwards; /* Faster fade-in */
+  }
 }
 
+/* Keyframe Animations */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -109,7 +118,7 @@
   }
 }
 
-@keyframes modal-scale-up {
+@keyframes modal-scale-up { /* Used by simple overlay modal */
   0% {
     transform: scale(0.95) translateY(10px);
     opacity: 0;
@@ -119,6 +128,9 @@
     opacity: 1;
   }
 }
+
+
+/* --- Component-Specific Custom Styles (Non-Tailwind or Complex) --- */
 
 /* Vertical Timeline Custom Styles */
 .vertical-timeline-element-content {
@@ -134,7 +146,7 @@
 /* Particle Container */
 #tsparticles {
   @apply absolute top-0 left-0 w-full h-full;
-  z-index: -1;
+  z-index: -1; /* Ensure it's behind content */
 }
 
 /* Project Cards - Old styles (Commented out as new cards are styled via Tailwind in ProjectSection.tsx) */
@@ -173,7 +185,7 @@
 
 /* Chat Widget */
 .chat-widget {
-  @apply fixed bottom-6 right-6 z-50;
+  @apply fixed bottom-6 right-6 z-50; /* Ensure z-index is lower than modals if they overlap */
 }
 
 .chat-toggle {
@@ -208,7 +220,7 @@
 }
 
 .chat-input {
-  @apply p-4 border-t border-gray-700;
+  @apply p-4 border-t border-gray-700; /* Using a neutral border color */
 }
 
 .chat-input input {
