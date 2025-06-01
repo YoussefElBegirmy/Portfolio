@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         <nav className="flex items-center justify-between h-20">
           <a href="#" className="flex items-center space-x-2">
             <Brain size={28} className="text-accent" />
-            <span className="text-xl font-bold">John Doe</span>
+            <span className="text-xl font-bold">Youssef Elbegermy</span>
           </a>
           
           {/* Desktop Navigation */}

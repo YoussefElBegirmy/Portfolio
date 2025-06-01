@@ -19,7 +19,7 @@ const CertificationsSection: React.FC = () => {
                 <img 
                   src={cert.badge} 
                   alt={cert.name} 
-                  className="h-20 object-contain"
+                  className="h-40 w-full object-cover rounded-lg" // Increased height and added width
                 />
               </div>
               

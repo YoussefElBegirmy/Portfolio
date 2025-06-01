@@ -89,10 +89,10 @@ const HeroSection: React.FC = () => {
       
       <div className="container mx-auto px-4 text-center z-10">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-          John Doe <span className="text-accent">|</span> AI Engineer
+          Youssef Elbegermy <span className="text-accent">|</span> AI Engineer
         </h1>
         
-        <div className="h-16 mb-8">
+        <div className="h-16 mb-12">
           <TypeAnimation
             sequence={[
               'Machine Learning Expert',
@@ -117,7 +117,7 @@ const HeroSection: React.FC = () => {
           smooth={true}
           offset={-70}
           duration={800}
-          className="btn btn-primary inline-block"
+          className="btn btn-primary inline-block mt-8"
         >
           View My Work
         </Link>
