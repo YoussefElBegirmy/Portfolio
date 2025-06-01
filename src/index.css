@@ -22,6 +22,11 @@
     overflow-x: hidden;
   }
 
+  /* Optional: Prevent body scroll when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold leading-tight;
   }
@@ -65,6 +70,10 @@
   }
 
   .card {
+    /* Note: The new ProjectsSection.tsx applies card styles directly.
+       This .card class can be a base or be overridden.
+       The p-6 might be removed if cards in ProjectsSection define their own padding.
+    */
     @apply bg-secondary bg-opacity-20 backdrop-blur-sm rounded-xl p-6 transition-all duration-300;
   }
 
@@ -78,6 +87,36 @@
 
   .nav-link.active::after {
     @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-accent;
+  }
+}
+
+/* Modal Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+  .animate-modal-scale-up {
+    animation: modal-scale-up 0.3s ease-out forwards;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-scale-up {
+  0% {
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
   }
 }
 
@@ -98,7 +137,8 @@
   z-index: -1;
 }
 
-/* Project Cards */
+/* Project Cards - Old styles (Commented out as new cards are styled via Tailwind in ProjectSection.tsx) */
+/*
 .project-card {
   @apply relative overflow-hidden;
   height: 350px;
@@ -120,6 +160,7 @@
 .project-card:hover .project-info {
   height: 75%;
 }
+*/
 
 /* Skill Bar */
 .skill-bar {
