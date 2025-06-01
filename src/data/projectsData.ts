@@ -1,8 +1,13 @@
+// src/data/projectsData.ts
+
 export interface Project {
   title: string;
-  description: string;
-  image: string;
-  category: string;
+  startDate: string; // Format: "MM/YYYY" or "Month YYYY"
+  endDate: string;   // Format: "MM/YYYY" or "Month YYYY" or "Present"
+  description: string; // Full description for the modal (can include \n for newlines)
+  shortDescription: string; // Shorter version for the card
+  image: string; // URL or path to project image
+  category: string; // For filtering
   technologies: string[];
   demoUrl?: string;
   githubUrl?: string;
@@ -11,84 +16,44 @@ export interface Project {
 
 export const ProjectsData: Project[] = [
   {
-    title: 'DeepVision: Retail Analytics Platform',
-    description: 'An end-to-end computer vision platform for retail environments that tracks customer movements, analyzes product interactions, and generates heatmaps of store activity. The system uses custom-trained YOLO models optimized for edge deployment on in-store cameras.',
-    image: 'https://images.pexels.com/photos/5428829/pexels-photo-5428829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'computer vision',
-    technologies: ['PyTorch', 'ONNX', 'TensorRT', 'React', 'Python', 'FastAPI'],
-    demoUrl: 'https://example.com/deepvision-demo',
-    githubUrl: 'https://github.com/johndoe/deepvision',
+    title: 'Medica (Graduation Project)',
+    startDate: '01/2025', // As per your CV
+    endDate: '05/2025',   // As per your CV
+    description: `A multi-faceted AI graduation project focusing on healthcare solutions:
+• AI Assistant: Developed an advanced RAG (Retrieval Augmented Generation) System chatbot utilizing Gemini API, LangChain, and Faiss. Successfully served over 150+ users weekly, providing intelligent assistance.
+• Voice Interaction: Engineered and integrated bilingual (e.g., English/Arabic) voice interaction capabilities using Kokoro-ONNX for seamless real-time communication with the AI assistant.
+• Cancer Detection: Designed, trained, and validated a Convolutional Neural Network (CNN) on a dataset of 20K augmented CT scans, achieving a 93% classification accuracy for identifying kidney-related conditions.`,
+    shortDescription: 'AI-driven healthcare solutions including a RAG chatbot, bilingual voice interaction, and CNN-based cancer detection from CT scans.',
+    image: '/images/projects/medica-project.jpg', // REPLACE with actual path/URL
+    category: 'AI & Healthcare',
+    technologies: ['Gemini API', 'LangChain', 'Faiss', 'Kokoro-ONNX', 'Hugging Face Transformers', 'CNNs (PyTorch/TensorFlow)', 'Flask', 'Docker'],
+    githubUrl: 'https://github.com/YoussefElBegirmy/medica-graduation-project', // REPLACE with actual URL (from "LLM Chatbot Repository")
     metrics: [
-      '95% accuracy in customer tracking',
-      '30 FPS real-time processing on edge devices',
-      'Deployed in 20+ retail stores nationwide'
+      '150+ weekly users for AI Assistant',
+      '93% classification accuracy in Cancer Detection',
+      'Real-time bilingual voice interaction'
     ]
   },
   {
-    title: 'NLP Sentiment Analyzer',
-    description: 'A fine-tuned BERT model for sentiment analysis that works across multiple domains including product reviews, social media, and customer support interactions. The model is deployed as an API service with a simple web interface for demonstration purposes.',
-    image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'nlp',
-    technologies: ['Hugging Face', 'TensorFlow', 'Flask', 'Docker', 'AWS Lambda'],
-    demoUrl: 'https://example.com/sentiment-demo',
-    githubUrl: 'https://github.com/johndoe/nlp-sentiment',
+    title: 'Fruit & Vegetable Image Classifier',
+    startDate: '09/2024', // As per your CV
+    endDate: '12/2024',   // As per your CV
+    description: `Developed an efficient image classification system for identifying fruits and vegetables:
+• Custom CNN Model: Built and trained a custom Convolutional Neural Network (CNN) achieving over 80%+ accuracy in classifying more than 40+ distinct types of fruits and vegetables.
+• Optimized Training: Leveraged ImageNet pre-trained models for feature extraction (transfer learning), significantly reducing model training time by approximately 40%.
+• Real-Time Web Application: Launched a responsive real-time web application for classification, which received positive feedback from early users for its intuitive design and performance.`,
+    shortDescription: 'Custom CNN for 40+ fruit/vegetable types, optimized training, and a real-time web app.',
+    image: '/images/projects/fruit-classifier.jpg', // REPLACE with actual path/URL
+    category: 'Computer Vision',
+    technologies: ['CNNs (PyTorch/TensorFlow)', 'ImageNet', 'Python', 'Flask/FastAPI (or other web framework)', 'HTML/CSS/JavaScript'],
+    demoUrl: 'https://YoussefElBegirmy.github.io/fruit-vegetable-classifier/', // REPLACE with actual URL (from "Website")
+    githubUrl: 'https://github.com/YoussefElBegirmy/fruit-vegetable-classifier', // REPLACE if you have a repo
     metrics: [
-      '92.7% accuracy on benchmark datasets',
-      '50ms average inference time',
-      '1M+ API calls per month'
-    ]
-  },
-  {
-    title: 'AutoML Pipeline Framework',
-    description: 'An automated machine learning pipeline that handles data preprocessing, feature engineering, model selection, hyperparameter tuning, and deployment. The system uses a combination of Bayesian optimization and genetic algorithms to find optimal model configurations.',
-    image: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'ml engineering',
-    technologies: ['Python', 'scikit-learn', 'Optuna', 'MLflow', 'Kubernetes'],
-    githubUrl: 'https://github.com/johndoe/automl-pipeline',
-    metrics: [
-      'Reduced model development time by 70%',
-      'Consistently outperforms manual tuning by 5-10%',
-      'Supports 30+ model types and 100+ preprocessing options'
-    ]
-  },
-  {
-    title: 'Reinforcement Learning for Robot Navigation',
-    description: 'A reinforcement learning system that enables robots to navigate complex environments with obstacles and dynamic elements. The approach combines model-based and model-free RL methods with curriculum learning to accelerate training.',
-    image: 'https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'reinforcement learning',
-    technologies: ['PyTorch', 'OpenAI Gym', 'ROS', 'Python', 'C++'],
-    demoUrl: 'https://example.com/rl-robot-demo',
-    githubUrl: 'https://github.com/johndoe/rl-navigation',
-    metrics: [
-      '85% success rate in complex navigation tasks',
-      '10x faster training compared to standard PPO',
-      'Successfully deployed on 3 different robot platforms'
-    ]
-  },
-  {
-    title: 'Medical Image Segmentation Tool',
-    description: 'A deep learning-based medical image segmentation tool that automatically identifies and outlines various anatomical structures and abnormalities in CT and MRI scans. The system uses a custom U-Net architecture with attention mechanisms for improved accuracy.',
-    image: 'https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'computer vision',
-    technologies: ['PyTorch', 'OpenCV', 'Python', 'Flask', 'DICOM'],
-    demoUrl: 'https://example.com/medseg-demo',
-    metrics: [
-      'Dice coefficient of 0.91 on liver segmentation',
-      '88% reduction in annotation time for radiologists',
-      'CE marked as a Class I medical device'
-    ]
-  },
-  {
-    title: 'Financial Forecasting with Transformers',
-    description: 'A time-series forecasting system for financial markets that uses transformer architectures to capture long-range dependencies and market patterns. The model incorporates both technical indicators and fundamental data to improve prediction accuracy.',
-    image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    category: 'time series',
-    technologies: ['PyTorch', 'Pandas', 'NumPy', 'FastAPI', 'PostgreSQL'],
-    githubUrl: 'https://github.com/johndoe/finance-transformer',
-    metrics: [
-      '23% improvement over ARIMA baselines',
-      'Successfully predicts market turning points with 68% accuracy',
-      'Processes data from 50+ global markets in real-time'
+      '80%+ classification accuracy',
+      'Identifies 40+ types of fruits and vegetables',
+      'Training time reduced by 40% using transfer learning',
+      'Real-time web application deployment'
     ]
   }
+  // Add more projects if you have them
 ];
