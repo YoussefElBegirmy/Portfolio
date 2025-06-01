@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
         options={{
           background: {
             color: {
-              value: '#1A1A1A',
+              value: '#0A0A0A',
             },
           },
           fpsLimit: 120,
@@ -47,10 +47,10 @@ const HeroSection: React.FC = () => {
           },
           particles: {
             color: {
-              value: '#007AFF',
+              value: '#8B5CF6',
             },
             links: {
-              color: '#007AFF',
+              color: '#8B5CF6',
               distance: 150,
               enable: true,
               opacity: 0.5,
