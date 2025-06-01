@@ -27,7 +27,6 @@ export const SkillsData: SkillCategory[] = [
       { name: 'Scikit-Learn', level: 90, experience: '7+ years' },
       { name: 'Hugging Face', level: 85, experience: '3+ years' },
       { name: 'LangChain', level: 80, experience: '3+ years' },
-      { name: 'Pandas', level: 80, experience: '3+ years' },
     ]
   },
   {
