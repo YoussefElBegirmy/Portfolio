@@ -1,89 +1,80 @@
 // src/data/experienceData.ts
 
-export interface Experience { // Renamed from ExperienceItem to Experience to match your provided interface
-  type: 'work' | 'education' | 'award'; // Added 'award' as a possibility
+export interface Experience {
+  type: 'work' | 'education'; // Removed 'award' as it's not on your CV in this section
   title: string;
-  company: string; // For education, this could be 'Institution' or 'University'
-  location: string;
+  company: string;
+  location?: string; // Optional, as ASI Community doesn't list one
   date: string;
-  responsibilities: string[]; // For education, these could be 'Key Courses', 'Thesis', 'GPA'
-  achievements?: string[];
-  technologies: string[];
+  responsibilities: string[]; // For education, these are details like Major, GPA
+  achievements?: string[]; // CV doesn't explicitly list "achievements" under work, but points can be inferred
+  technologies: string[]; // Key tools or skills used/taught
 }
 
 export const ExperienceData: Experience[] = [
+  // WORK EXPERIENCE
   {
     type: 'work',
-    title: 'Senior AI Engineer',
-    company: 'TechVision AI',
-    location: 'San Francisco, CA',
-    date: 'Jan 2023 - Present',
+    title: 'Co-leader',
+    company: 'ASI Community',
+    // location: 'Cairo, Egypt', // Not specified on CV for this role
+    date: '07/2024 – Present',
     responsibilities: [
-      'Lead a team of 5 AI engineers developing computer vision solutions for retail analytics',
-      'Design and implement deep learning models for customer behavior analysis',
-      'Optimize model inference for edge deployment on low-power devices',
-      'Collaborate with product teams to define AI feature roadmaps'
+      'Led 10 hands-on workshops empowering 50+ undergrads in CNNs, NLP, and AI deployment.',
+      'Mentored 30+ students on real-world AI projects, guiding model deployments and fostering innovation.',
     ],
     achievements: [
-      'Reduced model inference time by 40% while maintaining accuracy through quantization and pruning',
-      'Implemented a novel approach to multi-object tracking that improved accuracy by 25%',
-      'Published research paper at CVPR 2023 on efficient vision transformers'
+      // Example: "Successfully guided X student projects to completion."
+      // Example: "Achieved an average workshop rating of X/5."
     ],
-    technologies: ['PyTorch', 'TensorFlow', 'Python', 'CUDA', 'Docker', 'AWS']
+    technologies: ['CNNs', 'NLP', 'AI Deployment', 'Mentorship', 'Workshop Facilitation', 'Guidance'],
   },
   {
     type: 'work',
-    title: 'Machine Learning Engineer',
-    company: 'DataSmart Inc.',
-    location: 'Seattle, WA',
-    date: 'Mar 2020 - Dec 2022',
+    title: 'Data Analysis Instructor',
+    company: 'Upgrade',
+    location: 'Cairo, Egypt',
+    date: '05/2024 – 09/2024',
     responsibilities: [
-      'Developed and deployed NLP models for sentiment analysis and entity extraction',
-      'Built and maintained data processing pipelines for model training',
-      'Created visualization tools for model performance monitoring',
-      'Mentored junior engineers on ML best practices'
+      'Led hands-on data analysis sessions for 10 students utilizing Power BI, Excel, and MySQL to derive insights from datasets.',
+      'Developed and updated curriculum content focused on practical data analysis skills, aligning with industry standards.',
     ],
     achievements: [
-      'Increased entity extraction F1 score from 0.72 to 0.86 using BERT-based models',
-      'Reduced data processing time by 60% through parallel processing optimizations',
-      'Led migration from on-premise to cloud-based ML infrastructure'
+      // Example: "Curriculum adopted by X subsequent cohorts."
     ],
-    technologies: ['Python', 'Hugging Face', 'Spark', 'Kubernetes', 'GCP', 'scikit-learn']
+    technologies: ['Power BI', 'Excel', 'MySQL', 'Data Analysis', 'Curriculum Development', 'Teaching', 'Instruction'],
   },
   {
     type: 'work',
-    title: 'AI Research Intern',
-    company: 'Research Innovations Lab',
-    location: 'Boston, MA',
-    date: 'May 2019 - Feb 2020',
+    title: 'Data analysis Intern', // CV says "Data analysis Intern, Bi sloution"
+    company: 'Bi sloution', // Please verify this company name, "Bi Solution" might be more likely
+    location: 'Cairo, Egypt',
+    date: '2022 – 07/2023', // Consider making start month more specific if known, e.g., "01/2022 – 07/2023"
     responsibilities: [
-      'Conducted research on reinforcement learning for robotics applications',
-      'Implemented and evaluated various RL algorithms (PPO, SAC, TD3)',
-      'Collaborated with hardware team to integrate ML models with robotic systems',
-      'Presented research findings at internal and external conferences'
+      'Analyzed raw datasets using Power BI and SQL to provide actionable business insights.',
+      'Designed interactive dashboards for KPI tracking, improving executive decision-making by 20%.',
+      'Collaborated with cross-functional teams to streamline data workflows and identify reporting needs.',
     ],
     achievements: [
-      'Published 2 papers on sample-efficient reinforcement learning algorithms',
-      'Developed a simulation environment that reduced physical testing needs by 70%'
+      'Improved executive decision-making by 20% through interactive dashboards.',
     ],
-    technologies: ['Python', 'PyTorch', 'OpenAI Gym', 'ROS', 'C++', 'MATLAB']
+    technologies: ['Power BI', 'SQL', 'Dashboard Design', 'KPI Tracking', 'Data Workflow Optimization'],
   },
+  // EDUCATION
   {
     type: 'education',
-    title: 'M.S. in Computer Science, AI Specialization',
-    company: 'Stanford University', // Using 'company' field for Institution name
-    location: 'Stanford, CA',
-    date: '2017 - 2019',
-    responsibilities: [ // Using 'responsibilities' for details like GPA, Thesis, etc.
-      'GPA: 3.92/4.0',
-      'Thesis: "Efficient Transfer Learning for Vision-Language Models"',
-      'Research Assistant at Stanford AI Lab',
-      'Teaching Assistant for Deep Learning and Computer Vision courses'
+    title: 'Computer Science', // Degree Name
+    company: 'Higher Technological Institute (HTI)', // Institution Name
+    location: 'Egypt', // Assuming location based on other Cairo entries, add if known
+    date: '2021 – 2025',
+    responsibilities: [ // Using 'responsibilities' for major and GPA
+      'Major: Computer Science',
+      'GPA: 3.3',
     ],
-    achievements: [ // Can add academic awards or significant project outcomes here
-      'Awarded Stanford Graduate Fellowship',
-      'Best Thesis Award Nominee'
+    achievements: [
+      // Example: "Dean's List (Year)"
+      // Example: "Led capstone project on X"
     ],
-    technologies: ['Deep Learning', 'Computer Vision', 'NLP', 'Reinforcement Learning', 'Probabilistic Graphical Models']
-  }
+    technologies: ['Computer Science Fundamentals', /* Add key coursework areas if desired */ ],
+  },
 ];
