@@ -1,6 +1,6 @@
 // src/components/ProjectModal.tsx
 import React from 'react';
-import { Project }_from '../data/projectsData'; // Adjust path if your data file is elsewhere
+import { Project } from '../data/projectsData'; // Adjust path if your data file is elsewhere
 import { ExternalLink, Github, X } from 'lucide-react';
 
 interface ProjectModalProps {
