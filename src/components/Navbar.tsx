@@ -25,35 +25,35 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center space-x-2">
+          <a href="#" className="flex items-center space-x-2 cursor-pointer">
             <Brain size={28} className="text-accent" />
             <span className="text-xl font-bold">Youssef Elbegermy</span>
           </a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+            <Link to="home" spy={true} smooth={true} offset={-70} duration={500} className="nav-link cursor-pointer">
               Home
             </Link>
-            <Link to="experience" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+            <Link to="experience" spy={true} smooth={true} offset={-70} duration={500} className="nav-link cursor-pointer">
               Experience
             </Link>
-            <Link to="projects" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+            <Link to="projects" spy={true} smooth={true} offset={-70} duration={500} className="nav-link cursor-pointer">
               Projects
             </Link>
-            <Link to="skills" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+            <Link to="skills" spy={true} smooth={true} offset={-70} duration={500} className="nav-link cursor-pointer">
               Skills
             </Link>
-            <Link to="certifications" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+            <Link to="certifications" spy={true} smooth={true} offset={-70} duration={500} className="nav-link cursor-pointer">
               Certifications
             </Link>
-            <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="btn btn-primary">
+            <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="btn btn-primary cursor-pointer">
               Contact Me
             </Link>
           </div>
           
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-text" onClick={toggleMenu}>
+          <button className="md:hidden text-text cursor-pointer" onClick={toggleMenu}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </nav>
@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="nav-link text-2xl"
+            className="nav-link text-2xl cursor-pointer"
             onClick={closeMenu}
           >
             Home
@@ -83,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="nav-link text-2xl"
+            className="nav-link text-2xl cursor-pointer"
             onClick={closeMenu}
           >
             Experience
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="nav-link text-2xl"
+            className="nav-link text-2xl cursor-pointer"
             onClick={closeMenu}
           >
             Projects
@@ -105,7 +105,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="nav-link text-2xl"
+            className="nav-link text-2xl cursor-pointer"
             onClick={closeMenu}
           >
             Skills
@@ -116,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="nav-link text-2xl"
+            className="nav-link text-2xl cursor-pointer"
             onClick={closeMenu}
           >
             Certifications
@@ -127,7 +127,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             smooth={true} 
             offset={-70} 
             duration={500} 
-            className="btn btn-primary text-xl mt-4"
+            className="btn btn-primary text-xl mt-4 cursor-pointer"
             onClick={closeMenu}
           >
             Contact Me
