@@ -6,8 +6,8 @@
   --background: #0A0A0A;
   --text: #FFFFFF;
   --accent: #8B5CF6;
-  /* --accent-rgb: 139, 92, 246; */ /* Keep if you use glow effect with rgba */
-  --secondary: #2D2D2D; /* Used for timeline line and card background */
+  /* --accent-rgb: 139, 92, 246; */ /* Uncomment if using rgba(var(--accent-rgb), X) for effects */
+  --secondary: #2D2D2D;
   --success: #10B981;
   --warning: #F59E0B;
   --error: #EF4444;
@@ -20,97 +20,193 @@
   
   body {
     @apply bg-background text-text font-sans;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll on main page */
   }
 
-  /* Modal related body styles (from previous responses) */
-  body.modal-open { @apply overflow-hidden; }
-  body.modal-open-behance { @apply overflow-hidden; }
+  /* For the simple overlay modal */
+  body.modal-open {
+    @apply overflow-hidden;
+  }
 
-  h1, h2, h3, h4, h5, h6 { @apply font-bold leading-tight; }
-  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
-  h2 { @apply text-3xl md:text-4xl; }
-  h3 { @apply text-2xl md:text-3xl; }
-  p { @apply leading-relaxed; }
-  .section { @apply py-16 md:py-24; }
-  .container { @apply px-4 mx-auto max-w-7xl; }
+  /* For the Behance-style full-page modal */
+  body.modal-open-behance {
+    @apply overflow-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container {
+    @apply px-4 mx-auto max-w-7xl;
+  }
 }
 
 @layer components {
-  .btn { @apply px-6 py-3 rounded-md font-medium transition-all duration-300; }
-  .btn-primary { @apply bg-accent text-white hover:bg-opacity-80; }
-  .btn-outline { @apply border-2 border-accent text-accent hover:bg-accent hover:text-white; }
-  .card { @apply bg-secondary bg-opacity-20 backdrop-blur-sm rounded-xl p-6 transition-all duration-300; }
-  .nav-link { @apply relative px-2 py-1 text-text opacity-70 hover:opacity-100 transition-all duration-300 cursor-pointer; }
-  .nav-link.active { @apply opacity-100; }
-  .nav-link.active::after { @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-accent; }
+  .btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-opacity-80;
+  }
+
+  .btn-outline {
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-white;
+  }
+
+  .card { /* General card style, specific components might override */
+    @apply bg-secondary bg-opacity-20 backdrop-blur-sm rounded-xl p-6 transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply relative px-2 py-1 text-text opacity-70 hover:opacity-100 transition-all duration-300 cursor-pointer;
+  }
+
+  .nav-link.active {
+    @apply opacity-100;
+  }
+
+  .nav-link.active::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-[2px] bg-accent;
+  }
 }
 
-/* Modal Animations (from previous responses) */
+/* Modal Animations & Utilities */
 @layer utilities {
-  .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
-  .animate-modal-scale-up { animation: modal-scale-up 0.3s ease-out forwards; }
-  .animate-fade-in-fast { animation: fade-in 0.2s ease-out forwards; }
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out forwards;
+  }
+  .animate-modal-scale-up { /* For simple centered modal */
+    animation: modal-scale-up 0.3s ease-out forwards;
+  }
+  .animate-fade-in-fast { /* For Behance-style full screen modal */
+    animation: fade-in 0.2s ease-out forwards;
+  }
 }
-@keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-@keyframes modal-scale-up { 0% { transform: scale(0.95) translateY(10px); opacity: 0; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
 
-/* --- Component-Specific Custom Styles --- */
+/* Keyframe Animations */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes modal-scale-up {
+  0% { transform: scale(0.95) translateY(10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+
+/* --- Component-Specific Custom Styles (Non-Tailwind or Complex Overrides) --- */
 
 /* Vertical Timeline Overrides & Enhancements */
 .vertical-timeline-element-content {
-  background: var(--secondary) !important; /* Use a more solid background from your theme */
-  /* backdrop-filter: blur(4px) !important; */ /* Optional: if you want blur with a more solid bg */
-  /* background-color: rgba(45, 45, 45, 0.8) !important; */ /* Example with opacity */
+  background: var(--secondary) !important; 
   color: var(--text) !important;
-  border: 1px solid rgba(var(--accent-rgb, 139, 92, 246), 0.2) !important; /* Subtle accent border */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35) !important; /* Slightly stronger shadow */
+  /* Optional border: */
+  /* border: 1px solid rgba(139, 92, 246, 0.15) !important; */ /* Using accent color with low opacity */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
   border-radius: 0.75rem !important; /* Tailwind's rounded-xl */
-  padding: 1.5rem 2rem !important; /* Adjust padding as needed: p-6 md:p-8 */
+  padding: 1.25rem 1.5rem !important; /* Equivalent to p-5 px-6, adjust as needed */
 }
 
-.vertical-timeline-element-content .vertical-timeline-element-date {
-  /* Styles for date are now applied via dateClassName in the component for more control */
-  /* If not using dateClassName, you can style here: */
-  /* @apply text-sm text-gray-400 opacity-80 !important; */
+.vertical-timeline-element-content .vertical-timeline-element-content-arrow { /* More specific selector for arrow */
+  border-right-color: var(--secondary) !important; /* Match content background */
 }
 
-/* Ensure arrow color matches new background */
-.vertical-timeline-element-content-arrow {
-  border-right-color: var(--secondary) !important;
+.vertical-timeline::before { /* The main connecting line */
+  background: var(--secondary) !important; /* Line color, can also be a subtle gray */
+  width: 3px !important; /* Adjust thickness */
 }
 
-/* Styles for the line connecting timeline elements */
-.vertical-timeline::before {
-  background: var(--secondary) !important; /* Match line color to card backgrounds or a neutral dark gray */
-}
-
-/* Icon styles - mostly handled inline via iconStyle prop for dynamic effects */
+/* Icon styles for VerticalTimeline - Note: iconStyle prop in component provides more dynamic control */
 .vertical-timeline-element-icon {
-  /* The inline iconStyle in the component takes precedence for background, color, shadow */
-  /* This can be a fallback or for default sizing/display */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  box-shadow: 0 0 0 4px var(--background), /* Ring effect against page background */
-              0 4px 10px rgba(0,0,0,0.2) !important; /* Standard shadow */
+  /* The box-shadow for the ring effect is applied via iconStyle prop in the .tsx file */
+  /* This can be a fallback or for default non-dynamic icons */
+  box-shadow: 0 0 0 3px var(--background), /* Creates a ring against page background */
+              0 2px 5px rgba(0,0,0,0.25) !important; /* Softer shadow */
 }
+/* Date styling is handled by `dateClassName` prop in the component for better control */
+/* .vertical-timeline-element-date { ... } */
+
 
 /* Particle Container */
-#tsparticles { @apply absolute top-0 left-0 w-full h-full; z-index: -1; }
+#tsparticles {
+  @apply absolute top-0 left-0 w-full h-full;
+  z-index: -1; 
+}
+
+/* Project Cards - Old styles (Commented out as new cards are styled via Tailwind in ProjectSection.tsx) */
+/*
+.project-card { @apply relative overflow-hidden; height: 350px; }
+.project-card img { @apply w-full h-full object-cover transition-all duration-500; }
+.project-card:hover img { @apply scale-110; }
+.project-info { @apply absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-background to-transparent transform transition-all duration-300; height: 50%; }
+.project-card:hover .project-info { height: 75%; }
+*/
 
 /* Skill Bar */
-.skill-bar { @apply h-2 bg-secondary rounded-full overflow-hidden; }
-.skill-progress { @apply h-full bg-accent; }
+.skill-bar {
+  @apply h-2 bg-secondary rounded-full overflow-hidden;
+}
+.skill-progress {
+  @apply h-full bg-accent;
+}
 
 /* Chat Widget */
-.chat-widget { @apply fixed bottom-6 right-6 z-50; }
-.chat-toggle { @apply w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center cursor-pointer shadow-lg hover:bg-opacity-80 transition-all duration-300; }
-.chat-container { @apply bg-secondary bg-opacity-90 backdrop-blur-md rounded-xl shadow-xl overflow-hidden transition-all duration-300; width: 350px; max-height: 500px; }
-.chat-header { @apply bg-accent p-4 text-white font-bold; }
-.chat-messages { @apply p-4 overflow-y-auto; height: 320px; }
-.chat-message { @apply mb-4 max-w-[80%] p-3 rounded-lg; }
-.user-message { @apply bg-accent text-white ml-auto; }
-.bot-message { @apply bg-secondary text-text; }
-.chat-input { @apply p-4 border-t border-gray-700; }
-.chat-input input { @apply w-full p-2 rounded bg-background text-text outline-none border border-gray-700 focus:border-accent; }
+.chat-widget {
+  @apply fixed bottom-6 right-6 z-50; /* Ensure z-index is appropriate relative to modals */
+}
+.chat-toggle {
+  @apply w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center cursor-pointer shadow-lg hover:bg-opacity-80 transition-all duration-300;
+}
+.chat-container {
+  @apply bg-secondary bg-opacity-90 backdrop-blur-md rounded-xl shadow-xl overflow-hidden transition-all duration-300;
+  width: 350px;
+  max-height: 500px;
+}
+.chat-header {
+  @apply bg-accent p-4 text-white font-bold;
+}
+.chat-messages {
+  @apply p-4 overflow-y-auto;
+  height: 320px;
+}
+.chat-message {
+  @apply mb-4 max-w-[80%] p-3 rounded-lg;
+}
+.user-message {
+  @apply bg-accent text-white ml-auto;
+}
+.bot-message {
+  @apply bg-secondary text-text;
+}
+.chat-input {
+  @apply p-4 border-t border-gray-700;
+}
+.chat-input input {
+  @apply w-full p-2 rounded bg-background text-text outline-none border border-gray-700 focus:border-accent;
+}
