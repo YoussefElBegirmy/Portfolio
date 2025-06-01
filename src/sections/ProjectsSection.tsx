@@ -100,19 +100,26 @@ const ProjectsSection: React.FC = () => {
                     {project.shortDescription}
                   </p>
                   <div className="mt-auto">
+                    // Inside ProjectsSection.tsx, in the card's "Content Below Image" div
                     <div className="flex flex-wrap gap-1.5 mb-3">
                       {project.technologies.slice(0, 3).map((tech, idx) => (
                         <span
                           key={idx}
-                          className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-accent rounded-full"
+                          // OLD: className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-accent rounded-full"
+                          // NEW:
+                          className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-white font-medium rounded-full" // Changed to text-white and added font-medium
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                         <span className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-accent rounded-full">
-                           + {project.technologies.length - 3} more
-                         </span>
+                        <span 
+                          // OLD: className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-accent rounded-full"
+                          // NEW:
+                          className="inline-block px-2.5 py-1 text-xs bg-accent bg-opacity-15 text-white font-medium rounded-full" // Changed to text-white and added font-medium
+                        >
+                          + {project.technologies.length - 3} more
+                        </span>
                       )}
                     </div>
                      <span className="text-sm text-accent font-medium group-hover:underline">
