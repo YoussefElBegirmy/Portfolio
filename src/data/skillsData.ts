@@ -40,7 +40,7 @@ export const SkillsData: SkillCategory[] = [
     ]
   },
   {
-    category: 'AI Specializations & Data Expertise',
+    category: 'AI&Data Specializations',
     skills: [
       { name: 'Computer Vision', level: 90, experience: '6+ years' },
       { name: 'Natural Language Processing', level: 85, experience: '5+ years' },
