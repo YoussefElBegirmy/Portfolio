@@ -87,8 +87,18 @@ const HeroSection: React.FC = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between z-10">
-        <div className="text-center md:text-left md:w-1/2 mb-12 md:mb-0">
+      <div className="container mx-auto px-4 py-20 flex flex-col-reverse md:flex-row items-center justify-between z-10 gap-12">
+        <div className="md:w-1/2 flex justify-center md:justify-start">
+          <div className="relative w-72 h-72 md:w-[500px] md:h-[500px] rounded-2xl overflow-hidden border-4 border-accent shadow-2xl">
+            <img
+              src="/photo_2025-06-02_15-06-00.jpg"
+              alt="Youssef Elbegermy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="text-center md:text-left md:w-1/2">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
             Youssef Elbegermy <span className="text-accent">|</span> AI Engineer
           </h1>
@@ -122,16 +132,6 @@ const HeroSection: React.FC = () => {
           >
             View My Work
           </Link>
-        </div>
-
-        <div className="md:w-1/2 flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent shadow-2xl">
-            <img
-              src="/photo_2025-06-02_15-06-00.jpg"
-              alt="Youssef Elbegermy"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
         </div>
       </div>
       
