@@ -1,63 +1,40 @@
+// src/data/certificationsData.ts
+
 export interface Certification {
   name: string;
   issuer: string;
-  date: string;
-  expirationDate?: string;
-  description?: string;
-  badge: string;
-  verificationUrl?: string;
+  date: string; // Date issued. CV does not specify, using placeholder.
+  expirationDate?: string; // Optional
+  description?: string; // Brief description
+  badge: string; // URL to the badge image. Using placeholders.
+  verificationUrl?: string; // Optional link to verify
 }
 
 export const CertificationsData: Certification[] = [
   {
-    name: 'TensorFlow Developer Certificate',
-    issuer: 'Google',
-    date: 'June 2023',
-    expirationDate: 'June 2026',
-    description: 'Professional certification demonstrating proficiency in building and training neural networks using TensorFlow.',
-    badge: 'https://images.pexels.com/photos/11035539/pexels-photo-11035539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://www.credential.net/example'
-  },
-  {
-    name: 'AWS Certified Machine Learning - Specialty',
-    issuer: 'Amazon Web Services',
-    date: 'March 2022',
-    expirationDate: 'March 2025',
-    description: 'Validates expertise in using ML services and implementing ML solutions on the AWS platform.',
-    badge: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://www.credly.com/example'
-  },
-  {
-    name: 'Deep Learning Specialization',
-    issuer: 'Coursera / DeepLearning.AI',
-    date: 'January 2021',
-    description: 'Five-course specialization covering neural networks, hyperparameter tuning, CNNs, sequence models, and more.',
-    badge: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://www.coursera.org/account/accomplishments/example'
-  },
-  {
-    name: 'Professional Certificate in Computer Vision',
-    issuer: 'OpenCV.org',
-    date: 'November 2020',
-    description: 'Comprehensive training in computer vision algorithms, applications, and deployment strategies.',
-    badge: 'https://images.pexels.com/photos/11035501/pexels-photo-11035501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://opencv.org/courses/example'
-  },
-  {
-    name: 'Microsoft Certified: Azure AI Engineer Associate',
+    name: 'Microsoft Certified: Azure Data Scientist Associate',
     issuer: 'Microsoft',
-    date: 'July 2022',
-    expirationDate: 'July 2024',
-    description: 'Validates skills in designing and implementing AI solutions that leverage Azure cognitive services and machine learning.',
-    badge: 'https://images.pexels.com/photos/11035386/pexels-photo-11035386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://learn.microsoft.com/en-us/users/example/credentials'
+    date: 'Issued: 24 June 2024', // Placeholder: Update with actual date
+    // expirationDate: 'Expires: Please Update', // Add if applicable
+    description: 'Validates expertise in applying data science and machine learning to implement and run machine learning workloads on Azure.',
+    badge: '/images/badges/azure-data-scientist-associate.png', // Placeholder: Replace with actual badge URL (e.g., from Credly)
+    verificationUrl: 'https://learn.microsoft.com/en-us/users/youssef-salah-2880/credentials/55c1a8d9ff74dc93?ref=https%3A%2F%2Fwww.linkedin.com%2F', // Placeholder: Replace with actual verification link
   },
   {
-    name: 'PyTorch Developer Certificate',
-    issuer: 'PyTorch Foundation',
-    date: 'May 2023',
-    description: 'Advanced certification in building and deploying production-grade deep learning models with PyTorch.',
-    badge: 'https://images.pexels.com/photos/11035393/pexels-photo-11035393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    verificationUrl: 'https://pytorchcertificate.example.com/verify'
-  }
+    name: 'Machine Learning Specialization',
+    issuer: 'Coursera / DeepLearning.AI / Stanford CPD', // Combined issuers as per CV
+    date: 'Completed: May 2024', // Placeholder: Update with actual completion date
+    description: 'A comprehensive series of courses covering foundational and advanced topics in machine learning and deep learning.',
+    badge: '/images/badges/deeplearning-ai-ml-specialization.png', // Placeholder: Replace with actual badge URL
+    verificationUrl: 'https://www.coursera.org/account/accomplishments/specialization/9B74QLHDUBS7', // Placeholder: Replace with actual verification link from Coursera
+  },
+  {
+    name: 'Wireless Communication for IOT',
+    issuer: 'Information Technology Institute (ITI)',
+    date: 'Completed: Aug 2024', // Placeholder: Update with actual completion date
+    description: 'Focused on the principles and technologies behind wireless communication in Internet of Things (IoT) systems.',
+    badge: '/images/badges/iti-iot-communication.png', // Placeholder: Replace with actual badge URL
+    // verificationUrl: '#', // Placeholder: Add if ITI provides one
+  },
+  // Add more certifications if you have them
 ];
