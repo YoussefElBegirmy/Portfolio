@@ -15,7 +15,7 @@ export const CertificationsData: Certification[] = [
     name: 'Microsoft Certified: Azure Data Scientist Associate',
     issuer: 'Microsoft',
     date: 'Issued: 24 June 2024', // Placeholder: Update with actual date
-    // expirationDate: 'Expires: Please Update', // Add if applicable
+    expirationDate: 'Expires: 25 June 2025', // Add if applicable
     description: 'Validates expertise in applying data science and machine learning to implement and run machine learning workloads on Azure.',
     badge: '/images/badges/azure-data-scientist-associate.png', // Placeholder: Replace with actual badge URL (e.g., from Credly)
     verificationUrl: 'https://learn.microsoft.com/en-us/users/youssef-salah-2880/credentials/55c1a8d9ff74dc93?ref=https%3A%2F%2Fwww.linkedin.com%2F', // Placeholder: Replace with actual verification link
@@ -34,7 +34,7 @@ export const CertificationsData: Certification[] = [
     date: 'Completed: Aug 2024', // Placeholder: Update with actual completion date
     description: 'Focused on the principles and technologies behind wireless communication in Internet of Things (IoT) systems.',
     badge: '/images/badges/iti-iot-communication.png', // Placeholder: Replace with actual badge URL
-    // verificationUrl: '#', // Placeholder: Add if ITI provides one
+    verificationUrl: 'https://www.linkedin.com/in/youssef-elbegermy/overlay/1728402084078/single-media-viewer/?profileId=ACoAADduGYYBVubIwDHoQ8BR_liqZmavtGE0m5w', // Placeholder: Add if ITI provides one
   },
   // Add more certifications if you have them
 ];
