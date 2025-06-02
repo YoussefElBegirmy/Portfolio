@@ -91,7 +91,7 @@ const HeroSection: React.FC = () => {
         <div className="md:w-1/2 flex justify-center md:justify-start">
           <div className="relative w-72 h-72 md:w-[500px] md:h-[500px] rounded-2xl overflow-hidden border-4 border-accent shadow-2xl">
             <img
-              src="/photo_2025-06-02_15-06-00.jpg"
+              src="public/Profile.jpg"
               alt="Youssef Elbegermy"
               className="w-full h-full object-cover"
             />
