@@ -24,7 +24,7 @@ export const ProjectsData: Project[] = [
 • Voice Interaction: Engineered and integrated bilingual (e.g., English/Arabic) voice interaction capabilities using Kokoro-ONNX for seamless real-time communication with the AI assistant.
 • Cancer Detection: Designed, trained, and validated a Convolutional Neural Network (CNN) on a dataset of 20K augmented CT scans, achieving a 93% classification accuracy for identifying kidney-related conditions.`,
     shortDescription: 'AI-driven healthcare solutions including a RAG chatbot, bilingual voice interaction, and CNN-based cancer detection from CT scans.',
-    image: 'https://images.unsplash.com/a-basket-filled-with-lots-of-different-types-of-vegetables-nXKDqpmdx_8',
+    image: 'https://images.pexels.com/photos/7659564/pexels-photo-7659564.jpeg',
     category: 'AI & Healthcare',
     technologies: ['Gemini API', 'LangChain', 'Faiss', 'Kokoro-ONNX', 'Hugging Face Transformers', 'CNNs (PyTorch/TensorFlow)', 'Flask', 'Docker'],
     githubUrl: 'https://github.com/YoussefElBegirmy/medica-graduation-project',
@@ -43,7 +43,7 @@ export const ProjectsData: Project[] = [
 • Optimized Training: Leveraged ImageNet pre-trained models for feature extraction (transfer learning), significantly reducing model training time by approximately 40%.
 • Real-Time Web Application: Launched a responsive real-time web application for classification, which received positive feedback from early users for its intuitive design and performance.`,
     shortDescription: 'Custom CNN for 40+ fruit/vegetable types, optimized training, and a real-time web app.',
-    image: 'https://images.unsplash.com/person-holding-black-round-plate-E9Ucfek-Lp0',
+    image: 'https://images.pexels.com/photos/3943372/pexels-photo-3943372.jpeg',
     category: 'Computer Vision',
     technologies: ['CNNs (PyTorch/TensorFlow)', 'ImageNet', 'Python', 'Flask/FastAPI', 'HTML/CSS/JavaScript'],
     demoUrl: 'https://YoussefElBegirmy.github.io/fruit-vegetable-classifier/',
